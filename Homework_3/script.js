@@ -12,16 +12,16 @@
 // Пользователь вводит с клавиатуры число, если ввёл текст, необходимо вывести что значение задано неверно
 // Создать фукнцию, которая высчитывает 13% от данного числа и выводит в консоль текст "Размер заработной платы за вычетом налогов равен значение"
 
-// function salary() {
-//     let userSalary = Number(prompt("Введите вашу зарплату"));
-//     if (isFinite(userSalary) === true) {
-//         let result = userSalary - userSalary * 0.13;
-//         return console.log(`Ваша зарплата после вычета налога равна ${result}`);
-//     }
-//     return console.log(`Значение неверно ${userSalary}`);
-// }
+function salary() {
+    let userSalary = Number(prompt("Введите вашу зарплату"));
+    if (isFinite(userSalary) === true) {
+        let result = userSalary - userSalary * 0.13;
+        return console.log(`Ваша зарплата после вычета налога равна ${result}`);
+    }
+    return console.log(`Значение неверно ${userSalary}`);
+}
 
-// salary();
+salary();
 
 // Задание 3
 // Пользователь с клавиатуры вводит 3 числа, необходимо создать функцию, которая определяет максимальное значение среди этих чисел
