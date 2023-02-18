@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="super_element">Привет</p>
+
+    <img src="https://placeimg.com/50/50/animals" alt="">
+    <img src="https://placeimg.com/50/50/arch" alt="">
+    <img src="https://placeimg.com/50/50/nature" alt="">
+    <img src="https://placeimg.com/50/50/people" alt="">
+    <img src="https://placeimg.com/50/50/tech" alt="">
+    <img src="https://placeimg.com/50/50/tech/grayscale" alt="">
+    <img src="https://placeimg.com/50/50/tech/sepia" alt="">
+
+    <br>
+
+    <button>Кнопка</button>
+    <button class="super_element">Кнопка с классом btn</button>
+    <button>Кнопка</button>
+
+    <br>
+
+    <textarea></textarea>
+
+    <br>
+
+    <ul>
+        <li>
+            <button>Кнопка 1</button>
+        </li>
+        <li>
+            <button>Кнопка 2</button>
+        </li>
+        <li>
+            <button>Кнопка 3</button>
+        </li>
+        <li>
+            <button>Кнопка 4</button>
+        </li>
+    </ul>
+
+
+    <script>
+        // Задание 1
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Все теги прогрузились');
+        });
+
+
+        // Задание 2
+        window.addEventListener('load', function () {
+            console.log('Страница загрузилась');
+        });
+
+
+        // Задание 3
+        //         При клике на какой-либо тег на странице в консоль должно выводиться сообщение наподобие:
+        // - Класс "super_element" присутствует в элементе "div".
+        // - сообщение должно определять присутствует или отсутствует класс "super_element"
+        // - у элемента, а также выводить в нижнем регистре верный тег в данной строке, по
+        // - которому был совершен клик.
+        // - Необходимо использовать делегирование.
+        document.addEventListener('click', checkedTag => {
+            const findTag = checkedTag.target.classList.contains('super_element')
+                ? 'Присутствует' : 'Отсутсвует';
+            console.log(`Класс "super_element" ${findTag} в элементе "${checkedTag.target.tagName.toLowerCase()}"`);
+        });
+
+
+        // Задание 4
+        const mouseHover = document.querySelector('textarea');
+        mouseHover.addEventListener('mouseover', function () {
+            console.log('Вы навели на textarea');
+        });
+
+
+        // Задание 5
+        const clickEl = document.querySelector('ul');
+        clickEl.addEventListener('click', function (e) {
+            if (e.target.tagName === 'BUTTON') {
+                console.log(e.target.textContent);
+            }
+        });
+
+
+        // Задание 6
+        // Вопрос: Почему в console.log пишется сначала текст из 5 задания и только потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul? Ответ необходимо написать здесь же, под этим комментарием, своими словами.
+
+        // Ответ: При использовании делегирования обработчик сначала срабатывает на дочерние элементы, затем на родительские.
+
+
+        // Задание 7
+        const backgroundEl = document.querySelectorAll('li');
+        for (i = 0; i < backgroundEl.length; i += 2) {
+            backgroundEl[i].style.backgroundColor = 'grey';
+        }
+
+    </script>
+
+</body>
+
+</html>
