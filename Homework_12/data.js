@@ -2,6 +2,12 @@ function getProductsList() {
   return JSON.parse(json).goods;
 }
 
+function getProductsObject() {
+  return JSON.parse(json).goods.reduce((acc, product) => {
+    return { ...acc, [product.id]: product };
+  }, {});
+}
+
 const json = `{
   "goods": [
     {

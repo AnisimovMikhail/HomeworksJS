@@ -75,6 +75,72 @@ body {
   line-height: 19px;
 }
 
+.rightHeader {
+  position: relative;
+}
+
+.basket {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 37px;
+  background: white;
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+@media (min-width: 340px) {
+  .basket {
+    font-size: 16px;
+  }
+}
+@media (min-width: 552px) {
+  .basket {
+    width: 600px;
+  }
+}
+
+.basketRow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 10px;
+}
+
+.basketHeader {
+  font-weight: bold;
+}
+
+.basketTotal {
+  font-weight: bold;
+  text-align: right;
+}
+
+.delBtn {
+  display: flex;
+  background: #f8f3f4;
+  border: 0px;
+  border-radius: 5px;
+  margin-top: -17px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.delBtn:hover {
+  background: #f5f1f1;
+
+}
+
+.delBtn:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px #cbd6ee;
+}
+
 .newArrivals {
   background: #f8f3f4;
   min-height: 148px;
